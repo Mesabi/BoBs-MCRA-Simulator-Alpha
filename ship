@@ -1,0 +1,221 @@
+package BoBS_Engine;
+
+public class Ship {
+    //id|name|ownerID|faction|shipSize|maneuver|range|hull|crew|guns|cargo|cards
+
+
+    //basic info
+    private int shipID;
+    private String name;
+    private int ownerID;
+    private String owner;
+    private String faction;
+    //size class info
+    private int shipSize;
+    private int statTotal;//TODO use this for checking stats later.
+    //move info
+    private int maneuver; //man
+    private int range;
+    //battle stats
+    private int hull;
+    private int crew;
+    private int crewFinal;//adds carried troops to this number.
+    private int guns;
+    //
+    private boolean NOTdamaged = true;
+    private boolean NOTsunk = true;
+    private boolean NOTerror = true;
+    //cargo stats
+    private int cargo;
+    private int cargoFinal;//TODO subtracts carried troops to this number.
+    private int troopsCarried;
+    //Journey
+    private String portOrigin;
+    private String portDestination;
+    //card stats
+    private String cards = "null";
+    //trade stats
+    private int portOriginGoods;
+    public Ship(){}
+
+
+    //id|name|ownerID|faction|shipSize|maneuver|range|hull|crew|guns|cargo|cards
+   //* public Ship(int shipID, String name,int ownerID,String faction, int shipSize, int maneuver, int range, int hull, int crew, int guns, int cargo, String cards){
+      //  this.shipID = shipID;
+        //this.name = name;
+     //   this.ownerID = ownerID;
+    //    this.faction = faction;
+     //   this.maneuver = maneuver;
+      //  this.range = range;
+     //   this.hull = hull;
+     //   this.crew = crew;
+      //  this.guns = guns;
+      //  this.cargo = cargo;
+     //   this.cards = cards;
+
+   // }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getShipID() {
+        return shipID;
+    }
+
+    public int getShipSize() {
+        return shipSize;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getManeuver() {
+        return maneuver;
+    }
+
+    public int getHull() {
+        return hull;
+    }
+
+    public int getStatTotal() {
+        return statTotal;
+    }
+
+    public void setShipID(int shipID) {
+        this.shipID = shipID;
+    }
+
+    public void setHull(int hull) {
+        this.hull = hull;
+    }
+
+    public void setManeuver(int maneuver) {
+        this.maneuver = maneuver;
+    }
+
+    public void setShipSize(int shipSize) {
+        this.shipSize = shipSize;
+    }
+
+    public int getCargo() {
+        return cargo;
+    }
+
+    public int getCrew() {
+        return crew;
+    }
+
+    public int getCrewFinal() {//actually does something
+        crewFinal = crew+(int)(troopsCarried/5);
+        return crewFinal;
+    }
+
+    public int getGuns() {
+        return guns;
+    }
+
+    public int getTroopsCarried() {
+        return troopsCarried;
+    }
+
+    public String getCards() {
+        return cards;
+    }
+
+    public void setRange(int range) {
+        this.range = range;
+    }
+
+    public void setStatTotal(int statTotal) {
+        this.statTotal = statTotal;
+    }
+
+    public void setCrew(int crew) {
+        this.crew = crew;
+    }
+
+    public void setTroopsCarried(int troopsCarried) {
+        this.troopsCarried = troopsCarried;
+    }
+
+    public void setCards(String cards) {
+        this.cards = cards;
+    }
+
+    public void setCargo(int cargo) {
+        this.cargo = cargo;
+    }
+
+    public void setGuns(int guns) {
+        this.guns = guns;
+    }
+
+    public int getOwnerID() {
+        return ownerID;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public String getFaction() {
+        return faction;
+    }
+
+    public void setFaction(String faction) {
+        this.faction = faction;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setOwnerID(int ownerID) {
+        this.ownerID = ownerID;
+    }
+
+    public int getPortOriginGoods() {
+        return portOriginGoods;
+    }
+
+    public void setPortOriginGoods(int portOriginGoods) {
+        this.portOriginGoods = portOriginGoods;
+    }
+
+    public boolean isNOTDamaged() {
+        return NOTdamaged;
+    }
+
+    public void setDamaged(boolean damaged) {
+        this.NOTdamaged = damaged;
+    }
+
+    public boolean isNOTsunk() {
+        return NOTsunk;
+    }
+
+    public void setNOTdamaged(boolean NOTdamaged) {
+        this.NOTdamaged = NOTdamaged;
+    }
+
+    public boolean isNOTdamaged() {
+        return NOTdamaged;
+    }
+
+    public void setNOTsunk(boolean NOTsunk) {
+        this.NOTsunk = NOTsunk;
+    }
+
+    public boolean isNOTerror() {
+        return NOTerror;
+    }
+
+    public void setNOTerror(boolean NOTerror) {
+        this.NOTerror = NOTerror;
+    }
+}
